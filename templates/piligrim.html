@@ -1,0 +1,120 @@
+<html>
+<head>
+    <center><h1><font color="darkblue">PILGRIMS TOURISM</font></h2></center>
+<title></title>
+
+<style>
+    .in{
+        margin-left:210px;
+        margin-top: 18px;
+    }
+    .pk1{
+        margin-left:226px;
+        margin-top: 18px;
+    }
+    .su{
+        margin-left:210px
+    }
+</style>
+</head>
+
+<body bgcolor='khaki'>
+    <img src="static\Image\piligrim1.jpg" width="350px" height="300px" align="right">
+    <img src="static\Image\piligrim2.jpg" width="360px" height="300px" align="right">
+    <center>
+    <font face="bold">
+    <h1><font color='darkpink'>Visiting Pilgrim Places In INDIA</font color></h1>
+    <h3>Register The Place That You Want To Visit</h3>
+    </center>
+    <div>
+        <form method="post" action="/piligrim">
+            <table align="center">
+             <th>
+             <tr>
+                <td><label for="name">First Name :</label><br><br></td>   
+                <td><input type="text" placeholder="First Name" name="fname" value=""/><br><br></td>
+            </tr>
+            <tr>
+                <td><label for="name">Last Name :</label><br><br></td>   
+                <td><input type="text" placeholder="Last Name" name="lname" value=""/><br><br></td>
+            </tr>
+            <tr>
+                <td><label for="name">Aadhar Number :</label><br><br></td>   
+                <td><input type="text" placeholder="Aadhar Number" name="aad" value=""/><br><br></td>
+            </tr>
+            <tr>
+                <td><label for="gender">Gender<span style="color: red;">*</span><br><br></label></td>
+                <td><input type="radio" name="gender" value="male"/> Male
+                    <input type="radio" name="gender" value="female"/>Female<br><br></td>
+             </tr>
+             <tr>
+                <td><label for="phone">Mobile Number :</label><br><br></td>   
+                <td><select><option>+91</option><input type="phone" placeholder="Mobile Number" name="phone" value=""/><br><br></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email :</label><br><br></td>   
+                <td><input type="text" placeholder="Email Address" name="email" value=""/><br><br></td>
+            </tr>
+            <tr>
+                <td><label for="address">Address  :</label><br><br></td>   
+                <td><textarea row="3" cols="21" name="address" maxlength="100"></textarea><br><br></td>
+            </tr>
+            <tr>
+                <td><label for="totalno">Total Members :</label><br><br></td>   
+                <td><input type="text" placeholder="Total Members" name="totalno" value=""/><br><br></td>
+            </tr>
+            <tr>
+                <td><label for="booking">Booking Dates :</label><br><br></td>   
+                <td><input type="date" placeholder="Booking Dates" name="booking" value=""/><br><br></td>
+            </tr>
+            <tr>
+                <td><label for="visit">Visiting Places</label></td>
+                <td><select name="visit">
+                    <option value="">---select place---</option>
+                    <option value="Amarnath">Amarnath</option>
+                    <option value="Badhrachalam">Badhrachalam</option>
+                    <option value="Coimbattore">Coimbattore</option>
+                    <option value="Dwaraka">Dwaraka</option>
+                    <option value="Tirupathi">Tirupathi</option>
+                    <option value="CVaranasi">Varanasi</option>
+                   </select></td>
+             </tr>
+             <tr><center><br><br>
+                <table border=2px class="in">
+                    <th>Documents Required</th>
+                    <tr><td><ul><li>Aadhar Card 2 Copies</li>
+                    <li>Pan Card Xerox 2 Copies(OPTIONAL)</li>
+                    </table>
+            </tr></center>
+            <tr>
+                <div class="pk1">
+                    <th><label for="package">Package<br><br></label></th>
+                    <td><input type="radio" name="package" value="for 5 Days" >5 Days Package<br>
+                        <input type="radio" name="package" value="for 7 Days">7 Days Package<br>
+                        <input type="radio" name="package" value="for 10 Days">10 Days Package<br>
+                        <input type="radio" name="package" value="for 15 Days">15 Days Package<br>
+                        <input type="radio" name="package" value="for 20 Days">20 Days Package<br>
+                        <input type="radio" name="package" value="for 30 Days">30 Days Package<br>
+                    </td>            
+                </div>
+            </tr>
+            <tr>
+                <div class="pk1">
+                <td><h3>Cost For Each Person For 1 Day:2000</h3><td>
+                    <input type="submit" class="primary">
+                </div>
+                <br><br><br>
+            </tr>
+        </form>
+        </table>
+           <!--<tr> 
+                <td><h4>Select Max Places You want To Visit:</h4>
+                    <textarea row="3" cols="21" maxlength="100"></textarea><br><br></td>
+            </tr>
+            
+            <img src="E:\Explore_India\static\images\piligrim3.jpg" width="200px" height="200px" align="right">
+            <img src="E:\Explore_India\static\images\piligrim4.jpg" width="200px" height="200px" align="right">-->
+</body>
+</html>
+
+ 

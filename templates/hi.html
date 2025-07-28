@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .upi-options {
+            margin-top: 20px;
+        }
+
+        .qrcode-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        img.qrcode {
+            max-width: 100%;
+            height: auto;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Payment Details</h2>
+        <form id="paymentForm" method="post" action="/pay">
+            <table>
+                <tr>
+                    <th>Field</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td><label for="cardNumber">Card Number:</label></td>
+                    <td><input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" required></td>
+                </tr>
+                <tr>
+                    <td><label for="expiryDate">Expiry Date:</label></td>
+                    <td><input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YYYY" required></td>
+                </tr>
+                <tr>
+                    <td><label for="cvv">CVV:</label></td>
+                    <td><input type="text" id="cvv" name="cvv" placeholder="123" required></td>
+                </tr>
+                <tr>
+                    <td><label for="amount">Amount:</label></td>
+                    <td><input type="text" id="amount" name="amount" placeholder="Enter the amount" required></td>
+                </tr>
+                <tr><td><center>or</center></td></tr>
+                <tr>
+                    <td><label for="upiOptions">UPI Options:</label></td>
+                    <td>
+                        <select id="upiOptions" name="upiOptions">
+                            <option value="">select payment</option>
+                            <option value="googlepay">Google Pay</option>
+                            <option value="phonepe">PhonePe</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            
+            <button type="button" onclick="submitPayment()">Submit Payment</button>
+        </form>
+
+        <div class="qrcode-container" id="qrcodeContainer" style="display: none;">
+            <h3>Scan QR Code to Pay</h3>
+            <img src="static\Image\phonepe.jpg" alt="QR Code" class="qrcode" id="qrcode">
+        </div>
+    </div>
+
+
+    <script>
+        function submitPayment() {
+        
+
+            const amount = document.getElementById('amount').value;
+            const upiOption = document.getElementById('upiOptions').value;
+
+            const qrCodeText = `upi://pay?pa=example@upi&pn=Merchant&mc=1234&tid=5678&tr=9876&tn=Purchase&am=${amount}&cu=INR&url=${upiOption}`;
+
+            const qrcodeContainer = document.getElementById('qrcodeContainer');
+            const qrcodeImage = document.getElementById('qrcode');
+
+            qrcodeContainer.style.display = 'block';
+            qrcodeImage.src = "phonepe.jpg";
+            
+            new QRCode(qrcodeImage, qrCodeText);
+        }
+    </script>
+</body>
+</html>

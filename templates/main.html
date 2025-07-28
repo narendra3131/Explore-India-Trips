@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web Application with Banner</title>
+  <style>
+    body {
+      margin: 0;
+      background-image: url("{{url_for('static', filename="/Image/banner1.png")}}");
+      background-size: 1900px;
+      background-repeat:no-repeat;
+      background-size:cover;
+      image-height:600px
+      image-width:200px
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color:rgb(93, 173, 226);
+      padding: 20px;
+      margin-top:9px;
+      margin-left:3px;
+      margin-right:3px;
+      text-align: center;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      margin-left:3px;
+      margin-right:3px;
+      justify-content: center;
+      background-color: #333;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      margin: 0 10px;
+    }
+      
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Explore India</h1>
+  </header>
+
+  <nav>
+    <a href="/home">Home</a>
+    <a href="/about">About</a>
+    <a href="/service">Services</a>
+    <a href="/contact">Contact</a>
+  </nav>
+
+</div>
+</body>
+</html>

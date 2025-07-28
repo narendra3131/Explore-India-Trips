@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Options</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+.button {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="payment-container">
+    <h1>Select Payment Method</h1>
+
+    <form id="paymentForm">
+        
+<br>
+        <label>
+            <input type="radio" name="paymentMethod" value="online" checked>
+            Online Payment
+        </label>
+<br>
+    
+        <label>
+            <input type="radio" name="paymentMethod" value="UPid">
+            UPid Payment
+        </label>
+<br>
+        <label>
+            <input type="radio" name="paymentMethod" value="qrCode">
+            QR Code Payment
+        </label>
+<br>
+        <div id="qrCodeSection">
+            <h2>Scan QR Code</h2>
+            
+            <div id="qrcode"></div>
+        </div>
+<h3>Enter the amount:
+<label>
+	    <input type="numeric" name="Enter the amount">
+	</label></h3>
+
+<br>
+        <center><button type="button" onclick="processPayment()"><a href="p1.html"><font size="6" font color="red">Pay</a></font></button></center>
+    </form>
+
+</div>
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+<script>
+    function updateQRCodeSection() {
+        var qrCodeSection = document.getElementById('qrCodeSection');
+        var qrCodeInput = document.querySelector('input[name="paymentMethod"][value="qrCode"]');
+        
+        qrCodeSection.style.display = qrCodeInput.checked ? 'block' : 'none';
+        
+        if (qrCodeInput.checked) {
+            // Generate a sample QR code (replace with your actual QR code generation logic)
+            var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: 'https://example.com/qr-payment',
+                width: 128,
+                height: 128
+            });
+        }
+    }
+
+    // Attach the updateQRCodeSection function to the change event of the radio buttons
+    var radioButtons = document.querySelectorAll('input[name="paymentMethod"]');
+    radioButtons.forEach(function (radioButton) {
+        radioButton.addEventListener('change', updateQRCodeSection);
+    });
+
+    // Initial call to set the visibility of the QR code section
+    updateQRCodeSection();
+
+    // Function to process the selected payment method
+    function processPayment() {
+        var selectedMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+        alert('Processing ' + selectedMethod + ' payment');
+        // Add logic here to handle the selected payment method
+    }
+</script>
+</body>
+</html>
