@@ -249,36 +249,6 @@ def md():
     db.Mountains.insert_one(k)
     print("Inserted Sucessfully")
     return render_template('hi.html',result='you have registered successfully')
-# @app.route('/login', methods=['POST'])
-# def logindata():
-#     rollno=request.form['rollno']
-#     password=request.form['password']
-#     print(rollno,password)
-#     for i in collection.find():
-#         if (i['rollno']==rollno) and (i['password']==password):
-            # session['username']=rollno
-#             return render_template('dash.html')
-        
-#     return render_template('login.html',er='you have entered incorrect password')
-
-# @app.route('/logout')
-# def logout():
-    # session['username']=None
-    # return redirect('/login')
-
-# @app.route('/homepage')
-# def homepage():
-#     return redirect('/dash')
-
-
-# @app.route('/about')
-# def about():
-#     return render_template('about.html')
-
-# @app.route('/feedback')
-# def feed():
-#     return render_template('feedback.html')
-            
 
 
 if __name__=="__main__":
